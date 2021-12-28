@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="row gx-4 gx-lg-5 align-items-center my-5">
+    <form hx-post="{% url 'search-content' %}" hx-target="#htmx-table">
+        <div class="row">
+            <div class="row"  id="htmx-target">
+                {% include 'components/filter.html'%}
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </form>
+</div> 
+<div id="htmx-table">
+    {% include 'components/table.html'%}
+</div>
+{% endblock %}

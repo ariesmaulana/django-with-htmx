@@ -1,0 +1,19 @@
+
+<div class="col">
+    <select class="form-control" name="category" id="select-category" hx-get="{% url 'get-selected' %}" hx-target="#htmx-target" style="width:auto;"> 
+        {% for category in categories %}
+                <option value={{ category.id }} 
+                {% if  category.id == selected_category %} selected {% endif %}
+                >{{ category.name }} </option>
+        {% endfor %}
+    </select>
+</div>
+<div class="col">
+    <select name="sub_category" class="form-control" id="select-selected"  hx-get="{% url 'get-selected' %}" hx-target="#htmx-target" style="width:auto;">
+        {% for sub in sub_categories %}
+                <option value={{ sub.id }}
+                {% if  sub.id == selected_subcategory %} selected {% endif %}>
+                {{ sub.name }}</option>
+        {% endfor %}
+    </select>
+</div>

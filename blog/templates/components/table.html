@@ -1,0 +1,22 @@
+<div class="row gx-4 gx-lg-5">
+  <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Category</th>
+          <th scope="col">Sub Category</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for content in contents %}
+              <tr>
+              <th scope="row">{{ content.id }}</th>
+              <td>{{ content.title }}</td>
+              <td>{{ content.category }}</td>
+              <td>{{ content.sub_category }}</td>
+              </tr>
+          {% endfor %}
+      </tbody>
+    </table>   
+</div>
